@@ -5,7 +5,7 @@ description: "Zig build system for llama.cpp GGUF inference"
 
 <div style="display: flex; gap: 0.75rem; align-items: center; margin-bottom: 2rem;">
   <span class="card-lang lang-zig" style="font-size: 0.85rem; padding: 0.25rem 0.75rem;">Zig</span>
-  <span class="card-status status-stub" style="font-size: 0.8rem;">STUB</span>
+  <span class="card-status status-stub" style="font-size: 0.8rem;">INCOMPLETE</span>
   <a href="https://github.com/godsfromthemachine/zeus" class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.75rem;">GitHub</a>
 </div>
 
@@ -24,4 +24,4 @@ Zig's build system can compile C and C++ code natively, making it an ideal choic
 
 ## Status
 
-Zeus is currently a stub &mdash; the repository exists with initial structure but the core functionality is not yet implemented. It is on the [roadmap](/roadmap/) for Phase 6.
+Zeus is an incomplete, early-stage project. The repository exists with initial structure but the core functionality is not yet implemented. It is on the [roadmap](/roadmap/) for future development as part of Phase 6.

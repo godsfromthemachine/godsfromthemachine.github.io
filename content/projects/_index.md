@@ -10,9 +10,9 @@ Every project in the Gods from the Machine pantheon is a specialized, autonomous
 | Project | Language | Status | Description |
 |---------|----------|--------|-------------|
 | **[gilgamesh](/projects/gilgamesh/)** | Go | Active | TDD-driven local AI coding agent |
-| **[zeus](/projects/zeus/)** | Zig | Stub | Zig build system for llama.cpp GGUF inference |
-| **[raijin](/projects/raijin/)** | Rust | Complete | Lightning-fast ONNX CPU inference |
-| **[garuda](/projects/garuda/)** | Zig | Complete | Directory tree viewer |
+| **[zeus](/projects/zeus/)** | Zig | Incomplete | Zig build system for llama.cpp GGUF inference |
+| **[raijin](/projects/raijin/)** | Rust | Incomplete | ONNX CPU inference |
+| **[garuda](/projects/garuda/)** | Zig | Incomplete | Directory tree viewer |
 
 ## Naming Convention
 
