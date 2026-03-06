@@ -61,15 +61,16 @@ description: "Project milestones, phases, and future plans"
 
 <div class="phase">
   <div class="phase-dot active"></div>
-  <div class="phase-title">Phase 5: Gilgamesh v1.0 &mdash; Production Ready <span class="phase-status" style="color: var(--cyan);">NEXT</span></div>
+  <div class="phase-title">Phase 5: Gilgamesh v0.4 &mdash; Multi-language &amp; Permissions <span class="phase-status" style="color: var(--cyan);">IN PROGRESS</span></div>
   <ul class="phase-items">
+    <li class="done">Configurable tool permissions (allowed_tools/denied_tools)</li>
+    <li class="done">Multi-language test support (Go, Python, Rust, Zig, Node.js)</li>
+    <li class="done">Shell completion (bash, zsh, fish)</li>
+    <li class="done">Version bump to v0.4.0</li>
     <li class="todo">Memory/context persistence across sessions</li>
     <li class="todo">Project-scoped conversation history</li>
-    <li class="todo">Configurable tool permissions</li>
     <li class="todo">Custom tool registration (user-defined)</li>
-    <li class="todo">Multi-language test support</li>
     <li class="todo">TDD workflow automation (red-green-refactor)</li>
-    <li class="todo">Shell completion (bash, zsh, fish)</li>
   </ul>
 </div>
 
