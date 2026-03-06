@@ -50,7 +50,7 @@ gilgamesh/
 │   ├── bash.go          Shell execution (120s timeout, 10K cap)
 │   ├── grep.go          Content search (regex, 50 match cap)
 │   ├── glob.go          File pattern matching (100 file cap)
-│   └── test.go          Go test runner (package, filter, coverage)
+│   └── test.go          Multi-language test runner (Go, Python, Rust, Zig, Node)
 ├── mcp/
 │   ├── protocol.go      JSON-RPC 2.0 + MCP types
 │   └── server.go        Stdio MCP server
@@ -130,7 +130,7 @@ Client                          Gilgamesh MCP Server
 ### HTTP API Flow
 
 ```
-GET  /api/health          → {"status":"ok","version":"0.3.0"}
+GET  /api/health          → {"status":"ok","version":"0.5.0"}
 GET  /api/tools           → [{name, description, parameters}, ...]
 POST /api/tools/{name}    → {"result":"...", "elapsed":"42µs"}
 POST /api/chat            → SSE stream of agent events:
