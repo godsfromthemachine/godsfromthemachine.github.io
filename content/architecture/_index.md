@@ -59,7 +59,8 @@ gilgamesh/
 ├── config/              JSON config loader (model profiles)
 ├── context/             Project context + skills loader
 ├── hooks/               Pre/post tool execution hooks
-└── session/             JSONL session logging + distill
+├── session/             JSONL session logging + distill
+└── cmd/bench/           Go model benchmark tool
 ```
 
 ### Agent Loop
@@ -138,6 +139,18 @@ POST /api/chat            → SSE stream of agent events:
                               data: {"type":"tool_result","tool":"read","content":"..."}
                               data: {"type":"done"}
 ```
+
+## Benchmarking Infrastructure
+
+Gilgamesh includes a pure Go benchmark suite (`cmd/bench/`) for trialing local models. It measures five dimensions:
+
+1. **Health check** &mdash; endpoint latency
+2. **Minimal prompt** &mdash; TTFT + generation speed (tok/s)
+3. **Tool call** &mdash; can the model emit valid tool calls?
+4. **One-shot** &mdash; end-to-end gilgamesh `run` response
+5. **Edit task** &mdash; full agent loop: create file + edit it
+
+Results and ongoing findings are tracked in [`TRIALS.md`](https://github.com/godsfromthemachine/gilgamesh/blob/main/TRIALS.md). The quest: find the optimal model + quantization + inference parameters for a responsive, reliable, tool-calling agent running entirely on CPU.
 
 ## Design Decisions
 

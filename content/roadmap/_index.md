@@ -53,10 +53,13 @@ description: "Project milestones, phases, and future plans"
     <li class="done">Unit tests for HTTP server (health, tools, error handling)</li>
     <li class="done">Unit tests for config, context, hooks, and session packages</li>
     <li class="done">CI/CD with GitHub Actions (build + test on push/PR)</li>
-    <li class="todo">Table-driven tests with edge cases for tools</li>
+    <li class="done">Go benchmark tool (cmd/bench/) for model trialing</li>
+    <li class="done">Model trials documentation (TRIALS.md)</li>
+    <li class="done">Table-driven tests with edge cases for tools</li>
+    <li class="done">Unit tests for LLM client (95.6% coverage)</li>
+    <li class="done">Graceful shutdown for HTTP server</li>
+    <li class="done">Request timeouts (read/write/idle)</li>
     <li class="todo">Better error messages and diagnostics</li>
-    <li class="todo">Graceful shutdown for HTTP server</li>
-    <li class="todo">Request timeout middleware</li>
     <li class="todo">MCP protocol version negotiation</li>
   </ul>
 </div>
@@ -84,6 +87,22 @@ description: "Project milestones, phases, and future plans"
     <li class="todo">Cross-god integration via MCP/HTTP</li>
     <li class="todo">Shared tool library across gods</li>
     <li class="todo">Publishing and packaging (GitHub releases, homebrew)</li>
+  </ul>
+</div>
+
+<div class="phase">
+  <div class="phase-dot active"></div>
+  <div class="phase-title">Running: Model Trialing &amp; Benchmarking <span class="phase-status" style="color: var(--cyan);">ONGOING</span></div>
+  <ul class="phase-items">
+    <li class="done">Go benchmark tool (cmd/bench/main.go)</li>
+    <li class="done">Baseline benchmarks: Qwen3.5 2B Q4_K_M, 4B Q8_0</li>
+    <li class="done">Key findings documented (2B sweet spot, 0.8B rejected)</li>
+    <li class="todo">Trial Qwen3.5-4B Q4_K_M &mdash; faster 4B option</li>
+    <li class="todo">Trial IQ4_XS / IQ3_M quants &mdash; smaller memory footprint</li>
+    <li class="todo">Context length and thread count tuning</li>
+    <li class="todo">New model families &mdash; Phi-4, Gemma 3, others</li>
+    <li class="todo">Speculative decoding &mdash; draft model (0.8B) + verify (4B)</li>
+    <li class="todo">Multi-model routing &mdash; simple tasks &rarr; 2B, complex &rarr; 4B</li>
   </ul>
 </div>
 

@@ -88,7 +88,8 @@ gilgamesh/
 ├── config/           # JSON config loader (model profiles)
 ├── context/          # Project context + skills loader
 ├── hooks/            # Pre/post tool execution hooks
-└── session/          # JSONL session logging + distill
+├── session/          # JSONL session logging + distill
+└── cmd/bench/        # Go model benchmark tool
 ```
 
 ## Token Budget
@@ -103,6 +104,26 @@ The critical constraint for CPU inference:
 | **Total overhead** | **~1,600** |
 
 At 181 tok/s prompt processing (Qwen3.5-2B Q4_K_M, 16 threads), the first response arrives in ~10 seconds on CPU.
+
+## Benchmarking &amp; Model Trials
+
+Gilgamesh includes a pure Go benchmark tool for trialing local models:
+
+```bash
+go run ./cmd/bench              # benchmark default endpoint
+go run ./cmd/bench -all         # benchmark all reachable endpoints
+go run ./cmd/bench -model heavy # benchmark specific profile
+```
+
+Measures health latency, prompt speed (TTFT + tok/s), tool call parsing, one-shot agent response, and full edit task quality. Results are tracked in [`TRIALS.md`](https://github.com/godsfromthemachine/gilgamesh/blob/main/TRIALS.md).
+
+### Key Findings
+
+| Model | PP (tok/s) | TG (tok/s) | First Response | Verdict |
+|-------|-----------|-----------|---------------|---------|
+| Qwen3.5-2B Q4_K_M | 181 | 19 | ~7s | **Sweet spot** &mdash; default |
+| Qwen3.5-4B Q8_0 | 54 | 6.3 | ~25s | Quality ceiling &mdash; heavy |
+| Qwen3.5-0.8B | &mdash; | &mdash; | &mdash; | Rejected &mdash; too unreliable |
 
 ## Quick Start
 
