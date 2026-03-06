@@ -6,7 +6,7 @@ description: "TDD-driven local AI coding agent"
 <div class="card-grid" style="margin-bottom: 2rem;">
 <div style="display: flex; gap: 0.75rem; align-items: center;">
   <span class="card-lang lang-go" style="font-size: 0.85rem; padding: 0.25rem 0.75rem;">Go</span>
-  <span class="card-status status-active" style="font-size: 0.8rem;">ACTIVE &mdash; v0.2.0</span>
+  <span class="card-status status-active" style="font-size: 0.8rem;">ACTIVE &mdash; v0.3.0</span>
   <a href="https://github.com/godsfromthemachine/gilgamesh" class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.75rem;">GitHub</a>
 </div>
 </div>

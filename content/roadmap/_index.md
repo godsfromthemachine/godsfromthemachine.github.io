@@ -45,28 +45,23 @@ description: "Project milestones, phases, and future plans"
 </div>
 
 <div class="phase">
-  <div class="phase-dot active"></div>
-  <div class="phase-title">Phase 4: Gilgamesh v0.3 &mdash; Quality & Polish <span class="phase-status" style="color: var(--cyan);">IN PROGRESS</span></div>
+  <div class="phase-dot done"></div>
+  <div class="phase-title">Phase 4: Gilgamesh v0.3 &mdash; Quality & Polish <span class="phase-status" style="color: var(--green);">COMPLETE</span></div>
   <ul class="phase-items">
-    <li class="done">Unit tests for tools package (registry, read, glob, grep)</li>
-    <li class="done">Unit tests for MCP server (initialize, tools/list, tools/call)</li>
-    <li class="done">Unit tests for HTTP server (health, tools, error handling)</li>
-    <li class="done">Unit tests for config, context, hooks, and session packages</li>
+    <li class="done">Unit tests for all 9 packages (agent, llm, tools, mcp, server, config, context, hooks, session)</li>
     <li class="done">CI/CD with GitHub Actions (build + test on push/PR)</li>
     <li class="done">Go benchmark tool (cmd/bench/) for model trialing</li>
     <li class="done">Model trials documentation (TRIALS.md)</li>
     <li class="done">Table-driven tests with edge cases for tools</li>
-    <li class="done">Unit tests for LLM client (95.6% coverage)</li>
-    <li class="done">Graceful shutdown for HTTP server</li>
-    <li class="done">Request timeouts (read/write/idle)</li>
-    <li class="todo">Better error messages and diagnostics</li>
-    <li class="todo">MCP protocol version negotiation</li>
+    <li class="done">Graceful shutdown for HTTP server with request timeouts</li>
+    <li class="done">MCP protocol version negotiation (2025-03-26 + 2024-11-05)</li>
+    <li class="done">Version bump to v0.3.0</li>
   </ul>
 </div>
 
 <div class="phase">
-  <div class="phase-dot future"></div>
-  <div class="phase-title">Phase 5: Gilgamesh v1.0 &mdash; Production Ready <span class="phase-status">PLANNED</span></div>
+  <div class="phase-dot active"></div>
+  <div class="phase-title">Phase 5: Gilgamesh v1.0 &mdash; Production Ready <span class="phase-status" style="color: var(--cyan);">NEXT</span></div>
   <ul class="phase-items">
     <li class="todo">Memory/context persistence across sessions</li>
     <li class="todo">Project-scoped conversation history</li>

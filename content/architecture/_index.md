@@ -130,7 +130,7 @@ Client                          Gilgamesh MCP Server
 ### HTTP API Flow
 
 ```
-GET  /api/health          → {"status":"ok","version":"0.2.0"}
+GET  /api/health          → {"status":"ok","version":"0.3.0"}
 GET  /api/tools           → [{name, description, parameters}, ...]
 POST /api/tools/{name}    → {"result":"...", "elapsed":"42µs"}
 POST /api/chat            → SSE stream of agent events:
