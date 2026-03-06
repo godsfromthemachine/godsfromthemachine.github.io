@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" fill="none">
+  <defs>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0088cc"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7b2ff7"/>
+      <stop offset="100%" stop-color="#5a1fd6"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff006e"/>
+      <stop offset="100%" stop-color="#cc0058"/>
+    </linearGradient>
+  </defs>
+  <style>
+    text { font-family: 'SF Mono', 'Fira Code', monospace; }
+    .label { font-size: 13px; fill: #e0e0e0; font-weight: 600; }
+    .sublabel { font-size: 10px; fill: #888; }
+    .connector { stroke: #444; stroke-width: 1.5; stroke-dasharray: 4,3; }
+    .box { rx: 8; ry: 8; }
+  </style>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#0d1117" rx="12"/>
+
+  <!-- Title -->
+  <text x="350" y="32" text-anchor="middle" font-size="15" fill="#ccc" font-weight="700" letter-spacing="2">THE CLI / MCP / API DUALITY</text>
+
+  <!-- Local AI Model box -->
+  <rect x="250" y="50" width="200" height="50" class="box" fill="#1a1a2e" stroke="url(#cyan)" stroke-width="1.5"/>
+  <text x="350" y="72" text-anchor="middle" class="label">Local AI Model</text>
+  <text x="350" y="87" text-anchor="middle" class="sublabel">Qwen 3.5 via llama.cpp</text>
+
+  <!-- OpenAI API connector -->
+  <line x1="350" y1="100" x2="350" y2="140" class="connector"/>
+  <text x="358" y="125" class="sublabel">OpenAI-compatible API</text>
+
+  <!-- Three interface boxes -->
+  <!-- CLI -->
+  <rect x="60" y="150" width="160" height="60" class="box" fill="#1a1a2e" stroke="url(#cyan)" stroke-width="1.5"/>
+  <text x="140" y="177" text-anchor="middle" class="label" fill="#00d4ff">CLI REPL</text>
+  <text x="140" y="197" text-anchor="middle" class="sublabel">Terminal / Interactive</text>
+
+  <!-- MCP -->
+  <rect x="270" y="150" width="160" height="60" class="box" fill="#1a1a2e" stroke="url(#purple)" stroke-width="1.5"/>
+  <text x="350" y="177" text-anchor="middle" class="label" fill="#7b2ff7">MCP Server</text>
+  <text x="350" y="197" text-anchor="middle" class="sublabel">JSON-RPC 2.0 / stdio</text>
+
+  <!-- HTTP -->
+  <rect x="480" y="150" width="160" height="60" class="box" fill="#1a1a2e" stroke="url(#pink)" stroke-width="1.5"/>
+  <text x="560" y="177" text-anchor="middle" class="label" fill="#ff006e">HTTP API</text>
+  <text x="560" y="197" text-anchor="middle" class="sublabel">REST + SSE streaming</text>
+
+  <!-- Connectors from API to interfaces -->
+  <line x1="350" y1="140" x2="140" y2="150" stroke="#00d4ff" stroke-width="1" opacity="0.6"/>
+  <line x1="350" y1="140" x2="350" y2="150" stroke="#7b2ff7" stroke-width="1" opacity="0.6"/>
+  <line x1="350" y1="140" x2="560" y2="150" stroke="#ff006e" stroke-width="1" opacity="0.6"/>
+
+  <!-- Connectors down to tools -->
+  <line x1="140" y1="210" x2="140" y2="260" class="connector" stroke="#00d4ff" opacity="0.5"/>
+  <line x1="350" y1="210" x2="350" y2="260" class="connector" stroke="#7b2ff7" opacity="0.5"/>
+  <line x1="560" y1="210" x2="560" y2="260" class="connector" stroke="#ff006e" opacity="0.5"/>
+
+  <!-- Tool Registry box -->
+  <rect x="100" y="260" width="500" height="55" class="box" fill="#1a1a2e" stroke="#444" stroke-width="1"/>
+  <text x="350" y="283" text-anchor="middle" class="label">Tool Registry</text>
+  <text x="350" y="302" text-anchor="middle" class="sublabel">read  write  edit  bash  grep  glob  test</text>
+
+  <!-- Supporting systems -->
+  <line x1="350" y1="315" x2="350" y2="345" class="connector"/>
+
+  <!-- Bottom row: Skills, Hooks, Context, Session -->
+  <rect x="60" y="345" width="120" height="40" class="box" fill="#1a1a2e" stroke="#333" stroke-width="1"/>
+  <text x="120" y="370" text-anchor="middle" class="sublabel" fill="#aaa">Skills</text>
+
+  <rect x="200" y="345" width="120" height="40" class="box" fill="#1a1a2e" stroke="#333" stroke-width="1"/>
+  <text x="260" y="370" text-anchor="middle" class="sublabel" fill="#aaa">Hooks</text>
+
+  <rect x="340" y="345" width="120" height="40" class="box" fill="#1a1a2e" stroke="#333" stroke-width="1"/>
+  <text x="400" y="370" text-anchor="middle" class="sublabel" fill="#aaa">Context</text>
+
+  <rect x="480" y="345" width="120" height="40" class="box" fill="#1a1a2e" stroke="#333" stroke-width="1"/>
+  <text x="540" y="370" text-anchor="middle" class="sublabel" fill="#aaa">Sessions</text>
+
+  <!-- Consumer labels on left -->
+  <text x="20" y="175" class="sublabel" fill="#00d4ff">Humans</text>
+  <text x="20" y="192" class="sublabel" fill="#00d4ff" font-size="9">&#8594;</text>
+
+  <text x="237" y="175" class="sublabel" fill="#7b2ff7" font-size="9" text-anchor="end">Agents</text>
+  <text x="237" y="192" class="sublabel" fill="#7b2ff7" font-size="9" text-anchor="end">&#8594;</text>
+
+  <text x="672" y="175" class="sublabel" fill="#ff006e" text-anchor="end">Programs</text>
+  <text x="648" y="192" class="sublabel" fill="#ff006e" font-size="9">&#8592;</text>
+</svg>

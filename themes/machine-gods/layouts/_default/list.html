@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="section-heading">{{ .Section }}</div>
+<h1>{{ .Title }}</h1>
+<div class="prose">
+  {{ .Content }}
+</div>
+{{ range .Pages }}
+<div style="margin-bottom: 1.5rem;">
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  {{ if .Params.description }}<p style="color: var(--text-muted); font-size: 0.9rem;">{{ .Params.description }}</p>{{ end }}
+</div>
+{{ end }}
+{{ end }}

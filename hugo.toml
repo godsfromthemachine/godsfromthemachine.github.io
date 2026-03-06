@@ -1,0 +1,39 @@
+baseURL = 'https://godsfromthemachine.github.io/'
+languageCode = 'en-us'
+title = 'Gods from the Machine'
+theme = 'machine-gods'
+
+[params]
+  description = "Intelligent programs powered by local AI. Autonomous software that builds, runs, and improves itself."
+  tagline = "Intelligent Programs Powered by Local AI"
+  github = "https://github.com/godsfromthemachine"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 2
+  [[menu.main]]
+    name = "Architecture"
+    url = "/architecture/"
+    weight = 3
+  [[menu.main]]
+    name = "Roadmap"
+    url = "/roadmap/"
+    weight = 4
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'monokai'
+    noClasses = false

@@ -1,0 +1,7 @@
+name = "machine-gods"
+license = "MIT"
+licenselink = "https://github.com/godsfromthemachine/godsfromthemachine.github.io/blob/main/LICENSE"
+description = "Dark terminal-aesthetic theme for Gods from the Machine"
+
+[author]
+  name = "Baalateja Kataru"

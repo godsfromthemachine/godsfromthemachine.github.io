@@ -1,0 +1,19 @@
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <svg class="hex" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#00d4ff"/><stop offset="50%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#ff006e"/></linearGradient></defs>
+        <polygon points="24,2 44,13 44,35 24,46 4,35 4,13" stroke="url(#ng)" stroke-width="2" fill="none"/>
+        <circle cx="24" cy="24" r="6" fill="url(#ng)" opacity="0.9"/>
+        <circle cx="24" cy="24" r="3" fill="#0a0a0f"/>
+      </svg>
+      GFTM
+    </a>
+    <ul class="nav-links">
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} class="active"{{ end }}>{{ .Name }}</a></li>
+      {{ end }}
+      <li><a href="{{ .Site.Params.github }}" target="_blank">GitHub</a></li>
+    </ul>
+  </div>
+</nav>

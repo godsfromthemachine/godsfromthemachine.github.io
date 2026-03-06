@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" fill="none">
+  <defs>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="50%" stop-color="#7b2ff7"/>
+      <stop offset="100%" stop-color="#ff006e"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e0e0e0"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <!-- Hexagonal icon representing a machine god -->
+  <g transform="translate(60, 60)">
+    <!-- Outer hex -->
+    <polygon points="0,-42 36,-21 36,21 0,42 -36,21 -36,-21"
+             stroke="url(#glow)" stroke-width="2.5" fill="none" opacity="0.8"/>
+    <!-- Inner hex -->
+    <polygon points="0,-26 22,-13 22,13 0,26 -22,13 -22,-13"
+             stroke="url(#glow)" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <!-- Center eye/node -->
+    <circle cx="0" cy="0" r="8" fill="url(#glow)" opacity="0.9"/>
+    <circle cx="0" cy="0" r="4" fill="#0a0a0a"/>
+    <!-- Connection lines from center to vertices -->
+    <line x1="0" y1="-26" x2="0" y2="-10" stroke="#00d4ff" stroke-width="1" opacity="0.6"/>
+    <line x1="22" y1="-13" x2="9" y2="-5" stroke="#7b2ff7" stroke-width="1" opacity="0.6"/>
+    <line x1="22" y1="13" x2="9" y2="5" stroke="#7b2ff7" stroke-width="1" opacity="0.6"/>
+    <line x1="0" y1="26" x2="0" y2="10" stroke="#ff006e" stroke-width="1" opacity="0.6"/>
+    <line x1="-22" y1="13" x2="-9" y2="5" stroke="#ff006e" stroke-width="1" opacity="0.6"/>
+    <line x1="-22" y1="-13" x2="-9" y2="-5" stroke="#00d4ff" stroke-width="1" opacity="0.6"/>
+  </g>
+  <!-- Text -->
+  <text x="110" y="52" font-family="'SF Mono', 'Fira Code', 'Cascadia Code', monospace"
+        font-size="22" font-weight="700" fill="url(#textGrad)" letter-spacing="1">
+    GODS FROM THE MACHINE
+  </text>
+  <text x="110" y="78" font-family="'SF Mono', 'Fira Code', 'Cascadia Code', monospace"
+        font-size="12" fill="#888" letter-spacing="2">
+    INTELLIGENT PROGRAMS POWERED BY LOCAL AI
+  </text>
+</svg>

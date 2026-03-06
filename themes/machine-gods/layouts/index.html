@@ -1,0 +1,136 @@
+{{ define "main" }}
+
+<!-- Hero -->
+<section class="hero">
+  <img src="/img/logo.svg" alt="Gods from the Machine" class="hero-logo">
+  <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
+  <p class="hero-description">
+    We build autonomous, AI-powered software &mdash; "gods in the machine" &mdash;
+    that operate entirely on local, private, offline AI models. No cloud dependencies.
+    No API keys to external services. Just raw local inference powering intelligent programs.
+  </p>
+  <p class="hero-inspiration">
+    Inspired by the <a href="https://starwars.fandom.com/wiki/Machine_Gods_crisis">Gods from the Machine</a>
+    raid in Star Wars: The Old Republic &mdash; a pantheon of ancient, sentient super-weapons
+    worshiped as deities on the mechanical Dyson sphere planet Iokath.
+  </p>
+  <div class="hero-cta">
+    <a href="/projects/" class="btn btn-primary">Explore Projects</a>
+    <a href="{{ .Site.Params.github }}" class="btn btn-outline" target="_blank">View on GitHub</a>
+  </div>
+</section>
+
+<hr style="border: none; border-top: 1px solid var(--border); margin: 1rem 0 3rem;">
+
+<!-- Projects overview -->
+<div class="section-heading">Projects</div>
+<h2 style="margin-top: 0;">The Pantheon</h2>
+<p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+  Each god is a specialized autonomous entity &mdash; named after gods and legends from world mythology.
+  Every project runs on consumer hardware using small, capable models served via llama.cpp.
+</p>
+
+<div class="card-grid">
+  <a href="/projects/gilgamesh/" class="card" style="text-decoration: none;">
+    <div class="card-header">
+      <span class="card-title">gilgamesh</span>
+      <span class="card-lang lang-go">Go</span>
+    </div>
+    <p class="card-desc">TDD-driven local AI coding agent with CLI, MCP, and HTTP API interfaces. Tool-calling, streaming SSE, skills, hooks, session logging.</p>
+    <span class="card-status status-active">ACTIVE &mdash; v0.2.0</span>
+  </a>
+
+  <a href="/projects/zeus/" class="card" style="text-decoration: none;">
+    <div class="card-header">
+      <span class="card-title">zeus</span>
+      <span class="card-lang lang-zig">Zig</span>
+    </div>
+    <p class="card-desc">Zig-as-a-build-system for llama.cpp-powered local GGUF inference. Build, quantize, and serve models with a single command.</p>
+    <span class="card-status status-stub">STUB</span>
+  </a>
+
+  <a href="/projects/raijin/" class="card" style="text-decoration: none;">
+    <div class="card-header">
+      <span class="card-title">raijin</span>
+      <span class="card-lang lang-rust">Rust</span>
+    </div>
+    <p class="card-desc">Lightning-fast CPU inference via ONNX runtime. Blazing-fast local model execution in pure Rust.</p>
+    <span class="card-status status-complete">COMPLETE</span>
+  </a>
+
+  <a href="/projects/garuda/" class="card" style="text-decoration: none;">
+    <div class="card-header">
+      <span class="card-title">garuda</span>
+      <span class="card-lang lang-zig">Zig</span>
+    </div>
+    <p class="card-desc">Directory tree viewer replicating PowerShell's tree command. Fast, colorful, cross-platform.</p>
+    <span class="card-status status-complete">COMPLETE</span>
+  </a>
+</div>
+
+<hr style="border: none; border-top: 1px solid var(--border); margin: 3rem 0;">
+
+<!-- Principles -->
+<div class="section-heading">Philosophy</div>
+<h2 style="margin-top: 0;">Principles</h2>
+
+<div class="principles">
+  <div class="principle">
+    <div class="principle-name">Local-first</div>
+    <p class="principle-desc">All intelligence comes from free, local, private AI models. No cloud, no subscriptions, no data leaving your machine.</p>
+  </div>
+  <div class="principle" style="border-color: var(--cyan);">
+    <div class="principle-name">Blazing fast</div>
+    <p class="principle-desc">Built in Go, Rust, Zig &mdash; high-performance languages for CPU inference. First response in seconds, not minutes.</p>
+  </div>
+  <div class="principle" style="border-color: var(--pink);">
+    <div class="principle-name">Lean</div>
+    <p class="principle-desc">Minimal token overhead. Gilgamesh uses ~1,600 tokens total, enabling responsive agent loops on CPU.</p>
+  </div>
+  <div class="principle">
+    <div class="principle-name">Open source</div>
+    <p class="principle-desc">MIT licensed. Free to use, learn from, and contribute to. No proprietary lock-in.</p>
+  </div>
+  <div class="principle" style="border-color: var(--cyan);">
+    <div class="principle-name">CLI + MCP + API</div>
+    <p class="principle-desc">Every god exposes the same capabilities through CLI, MCP, and HTTP &mdash; for humans, agents, and programs alike.</p>
+  </div>
+  <div class="principle" style="border-color: var(--pink);">
+    <div class="principle-name">Mythological</div>
+    <p class="principle-desc">Projects named after gods and legends. Each one a specialized, autonomous entity in the pantheon.</p>
+  </div>
+</div>
+
+<hr style="border: none; border-top: 1px solid var(--border); margin: 3rem 0;">
+
+<!-- Quick start -->
+<div class="section-heading">Get Started</div>
+<h2 style="margin-top: 0;">Quick Start</h2>
+
+<div class="terminal">
+  <div class="terminal-bar">
+    <span class="terminal-dot red"></span>
+    <span class="terminal-dot yellow"></span>
+    <span class="terminal-dot green"></span>
+    <span class="terminal-title">terminal</span>
+  </div>
+  <div class="terminal-body">
+    <span class="comment"># Clone and build</span><br>
+    <span class="prompt">$ </span><span class="cmd">git clone https://github.com/godsfromthemachine/gilgamesh</span><br>
+    <span class="prompt">$ </span><span class="cmd">cd gilgamesh && go build -o gilgamesh .</span><br>
+    <br>
+    <span class="comment"># Interactive mode</span><br>
+    <span class="prompt">$ </span><span class="cmd">./gilgamesh</span><br>
+    <br>
+    <span class="comment"># One-shot mode</span><br>
+    <span class="prompt">$ </span><span class="cmd">./gilgamesh run "list all Go files"</span><br>
+    <br>
+    <span class="comment"># MCP server (for Claude Desktop, other agents)</span><br>
+    <span class="prompt">$ </span><span class="cmd">./gilgamesh mcp</span><br>
+    <br>
+    <span class="comment"># HTTP API server</span><br>
+    <span class="prompt">$ </span><span class="cmd">./gilgamesh serve -p 7777</span><br>
+  </div>
+</div>
+
+{{ end }}
