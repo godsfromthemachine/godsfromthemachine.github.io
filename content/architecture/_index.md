@@ -58,8 +58,9 @@ gilgamesh/
 │   └── server.go        HTTP API server
 ├── config/              JSON config loader (model profiles)
 ├── context/             Project context + skills loader
+├── memory/              Project-scoped persistent memory
 ├── hooks/               Pre/post tool execution hooks
-├── session/             JSONL session logging + distill
+├── session/             JSONL session logging + conversation history
 └── cmd/bench/           Go model benchmark tool
 ```
 
@@ -107,7 +108,7 @@ The critical constraint for CPU inference. Every token in the system prompt dela
 | Typical user message | 50-200 |
 | **First request** | **~1,700-1,800** |
 
-At 181 tok/s prompt processing (Qwen3.5-2B Q4_K_M, 16 threads), the first response arrives in ~10 seconds. Subsequent turns benefit from KV cache.
+At ~160 tok/s prompt processing (Qwen3.5-2B Q4_K_M, 12 threads), the first response arrives in ~10 seconds. Subsequent turns benefit from KV cache.
 
 ### MCP Protocol Flow
 

@@ -110,7 +110,7 @@ The critical constraint for CPU inference:
 | Project context | ~500 (capped) |
 | **Total overhead** | **~1,600** |
 
-At 181 tok/s prompt processing (Qwen3.5-2B Q4_K_M, 16 threads), the first response arrives in ~10 seconds on CPU.
+At ~160 tok/s prompt processing (Qwen3.5-2B Q4_K_M, 12 threads), the first response arrives in ~10 seconds on CPU.
 
 ## Benchmarking &amp; Model Trials
 
