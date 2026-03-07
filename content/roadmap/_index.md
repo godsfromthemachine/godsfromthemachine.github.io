@@ -60,8 +60,8 @@ description: "Project milestones, phases, and future plans"
 </div>
 
 <div class="phase">
-  <div class="phase-dot active"></div>
-  <div class="phase-title">Phase 5: Gilgamesh v0.5 &mdash; Skills, Permissions &amp; Multi-language <span class="phase-status" style="color: var(--cyan);">IN PROGRESS</span></div>
+  <div class="phase-dot done"></div>
+  <div class="phase-title">Phase 5: Gilgamesh v0.5 &mdash; Skills, Permissions &amp; Multi-language <span class="phase-status" style="color: var(--green);">COMPLETE</span></div>
   <ul class="phase-items">
     <li class="done">Configurable tool permissions (allowed_tools/denied_tools)</li>
     <li class="done">Multi-language test support (Go, Python, Rust, Zig, Node.js)</li>
