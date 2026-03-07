@@ -95,7 +95,10 @@ description: "Project milestones, phases, and future plans"
     <li class="done">Go benchmark tool (cmd/bench/main.go)</li>
     <li class="done">Baseline benchmarks: Qwen3.5 2B Q4_K_M, 4B Q8_0</li>
     <li class="done">Key findings documented (2B sweet spot, 0.8B rejected)</li>
-    <li class="todo">Trial Qwen3.5-4B Q4_K_M &mdash; faster 4B option</li>
+    <li class="done">Enhanced bench suite: config loading, raw llama-bench, JSON output, result persistence</li>
+    <li class="done">4B Q4_K_M raw trial &mdash; same speed as Q8_0, saves 1.6GB disk</li>
+    <li class="done">Full -all comparison run: 2B vs 4B with summary table</li>
+    <li class="todo">4B Q4_K_M agent benchmarks &mdash; tool calling reliability vs Q8_0</li>
     <li class="todo">Trial IQ4_XS / IQ3_M quants &mdash; smaller memory footprint</li>
     <li class="todo">Context length and thread count tuning</li>
     <li class="todo">New model families &mdash; Phi-4, Gemma 3, others</li>

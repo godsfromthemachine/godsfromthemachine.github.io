@@ -142,13 +142,18 @@ POST /api/chat            → SSE stream of agent events:
 
 ## Benchmarking Infrastructure
 
-Gilgamesh includes a pure Go benchmark suite (`cmd/bench/`) for trialing local models. It measures five dimensions:
+Gilgamesh includes a pure Go benchmark suite (`cmd/bench/`) for trialing local models. It loads profiles from `gilgamesh.json`, integrates with llama-bench for raw inference metrics, and supports JSON output for historical tracking.
+
+It measures six dimensions:
 
 1. **Health check** &mdash; endpoint latency
-2. **Minimal prompt** &mdash; TTFT + generation speed (tok/s)
-3. **Tool call** &mdash; can the model emit valid tool calls?
-4. **One-shot** &mdash; end-to-end gilgamesh `run` response
-5. **Edit task** &mdash; full agent loop: create file + edit it
+2. **Raw inference** &mdash; llama-bench pp/tg tok/s (auto-detects binaries in `local-ai/bin/`)
+3. **Minimal prompt** &mdash; TTFT + generation speed via API
+4. **Tool call** &mdash; can the model emit valid tool calls?
+5. **One-shot** &mdash; end-to-end gilgamesh `run` response
+6. **Edit task** &mdash; full agent loop: create file + edit it
+
+Supports `-all` (compare all profiles), `-raw` (raw llama-bench), `-json` (machine-readable), `-save` (append to JSON log).
 
 Results and ongoing findings are tracked in [`TRIALS.md`](https://github.com/godsfromthemachine/gilgamesh/blob/main/TRIALS.md). The quest: find the optimal model + quantization + inference parameters for a responsive, reliable, tool-calling agent running entirely on CPU.
 

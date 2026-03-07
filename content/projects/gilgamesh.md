@@ -111,15 +111,17 @@ At 181 tok/s prompt processing (Qwen3.5-2B Q4_K_M, 16 threads), the first respon
 
 ## Benchmarking &amp; Model Trials
 
-Gilgamesh includes a pure Go benchmark tool for trialing local models:
+Gilgamesh includes a pure Go benchmark suite for trialing local models. It loads profiles from config, integrates with llama-bench, and supports JSON output for historical tracking:
 
 ```bash
-go run ./cmd/bench              # benchmark default endpoint
-go run ./cmd/bench -all         # benchmark all reachable endpoints
-go run ./cmd/bench -model heavy # benchmark specific profile
+go run ./cmd/bench              # benchmark active profile from config
+go run ./cmd/bench -all         # benchmark all profiles + summary table
+go run ./cmd/bench -raw         # include raw llama-bench pp/tg metrics
+go run ./cmd/bench -json        # JSON output for scripting
+go run ./cmd/bench -save r.json # append to JSON log for tracking
 ```
 
-Measures health latency, prompt speed (TTFT + tok/s), tool call parsing, one-shot agent response, and full edit task quality. Results are tracked in [`TRIALS.md`](https://github.com/godsfromthemachine/gilgamesh/blob/main/TRIALS.md).
+Measures 6 dimensions: health, raw inference (pp/tg tok/s), minimal prompt, tool call parsing, one-shot agent, and full edit task. Results are tracked in [`TRIALS.md`](https://github.com/godsfromthemachine/gilgamesh/blob/main/TRIALS.md).
 
 ### Key Findings
 
