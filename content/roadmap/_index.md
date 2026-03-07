@@ -66,13 +66,13 @@ description: "Project milestones, phases, and future plans"
     <li class="done">Configurable tool permissions (allowed_tools/denied_tools)</li>
     <li class="done">Multi-language test support (Go, Python, Rust, Zig, Node.js)</li>
     <li class="done">Shell completion (bash, zsh, fish)</li>
-    <li class="done">6 built-in skills embedded in binary (commit, review, explain, fix, refactor, doc)</li>
+    <li class="done">7 built-in skills embedded in binary (commit, review, explain, fix, refactor, doc, tdd)</li>
     <li class="done">3-tier skill precedence: built-in &rarr; global &rarr; project-local</li>
     <li class="done">Version bump to v0.5.0</li>
     <li class="done">Memory/context persistence across sessions (.gilgamesh/memory.json)</li>
     <li class="done">Project-scoped conversation history (save/resume)</li>
     <li class="done">Custom tool registration (.gilgamesh/tools.json)</li>
-    <li class="todo">TDD workflow automation (red-green-refactor)</li>
+    <li class="done">TDD workflow automation (/tdd built-in skill)</li>
   </ul>
 </div>
 
