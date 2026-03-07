@@ -26,9 +26,13 @@ theme = 'machine-gods'
     url = "/roadmap/"
     weight = 4
   [[menu.main]]
+    name = "Research"
+    url = "/research/"
+    weight = 5
+  [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 5
+    weight = 6
 
 [markup]
   [markup.goldmark]
