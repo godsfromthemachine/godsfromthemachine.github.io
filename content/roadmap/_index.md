@@ -98,9 +98,10 @@ description: "Project milestones, phases, and future plans"
     <li class="done">Enhanced bench suite: config loading, raw llama-bench, JSON output, result persistence</li>
     <li class="done">4B Q4_K_M raw trial &mdash; same speed as Q8_0, saves 1.6GB disk</li>
     <li class="done">Full -all comparison run: 2B vs 4B with summary table</li>
-    <li class="todo">4B Q4_K_M agent benchmarks &mdash; tool calling reliability vs Q8_0</li>
+    <li class="done">4B Q4_K_M agent bench &mdash; outperforms Q8_0, recommend as heavy profile</li>
+    <li class="done">Thread tuning &mdash; 12 threads optimal on 16-core EPYC, 30% better TG</li>
+    <li class="done">Context length impact &mdash; 16K ctx saves 672MB, sufficient for agent</li>
     <li class="todo">Trial IQ4_XS / IQ3_M quants &mdash; smaller memory footprint</li>
-    <li class="todo">Context length and thread count tuning</li>
     <li class="todo">New model families &mdash; Phi-4, Gemma 3, others</li>
     <li class="todo">Speculative decoding &mdash; draft model (0.8B) + verify (4B)</li>
     <li class="todo">Multi-model routing &mdash; simple tasks &rarr; 2B, complex &rarr; 4B</li>
