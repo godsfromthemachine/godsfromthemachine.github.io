@@ -38,7 +38,7 @@ gilgamesh/
 ├── main.go              Entry point, REPL, subcommand dispatch
 ├── agent/
 │   ├── agent.go         Core loop: prompt → LLM → tool → repeat
-│   │                    Run() for CLI, RunWithEvents() for HTTP
+│   │                    Run()/RunWithContext() for CLI, RunWithEvents() for HTTP
 │   └── prompt.go        TDD-first system prompt (~300 tokens)
 ├── llm/
 │   └── client.go        OpenAI-compatible streaming SSE client
@@ -56,12 +56,13 @@ gilgamesh/
 │   └── server.go        Stdio MCP server
 ├── server/
 │   └── server.go        HTTP API server
-├── config/              JSON config loader (model profiles)
-├── context/             Project context + skills loader
+├── ui/                  Terminal UI (color, markdown, tables, gauges, errors, commands)
+├── config/              JSON config loader, validation, env var overrides
+├── context/             Project context + skills loader (7 built-in via go:embed)
 ├── memory/              Project-scoped persistent memory
 ├── hooks/               Pre/post tool execution hooks
 ├── session/             JSONL session logging + conversation history
-└── cmd/bench/           Go model benchmark tool
+└── cmd/bench/           Go model benchmark tool (6-stage pipeline)
 ```
 
 ### Agent Loop
@@ -131,7 +132,7 @@ Client                          Gilgamesh MCP Server
 ### HTTP API Flow
 
 ```
-GET  /api/health          → {"status":"ok","version":"0.5.0"}
+GET  /api/health          → {"status":"ok","version":"0.6.0"}
 GET  /api/tools           → [{name, description, parameters}, ...]
 POST /api/tools/{name}    → {"result":"...", "elapsed":"42µs"}
 POST /api/chat            → SSE stream of agent events:

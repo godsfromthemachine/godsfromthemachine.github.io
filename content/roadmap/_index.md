@@ -77,8 +77,25 @@ description: "Project milestones, phases, and future plans"
 </div>
 
 <div class="phase">
+  <div class="phase-dot done"></div>
+  <div class="phase-title">Phase 6: Gilgamesh v0.6 &mdash; UI &amp; Developer Experience <span class="phase-status" style="color: var(--green);">COMPLETE</span></div>
+  <ul class="phase-items">
+    <li class="done">Command registry pattern replacing switch statement</li>
+    <li class="done">Graceful Ctrl+C via context.Context threading</li>
+    <li class="done">Streaming markdown renderer (headers, bold/italic, lists, blockquotes, code blocks)</li>
+    <li class="done">Accessible NoColor icon fallbacks</li>
+    <li class="done">Auto-sized table renderer and context pressure gauge</li>
+    <li class="done">Error classification with recovery hints</li>
+    <li class="done">Config validation and environment variable overrides</li>
+    <li class="done">Spinner with elapsed time display</li>
+    <li class="done">Terminal color profile detection (NO_COLOR, CLICOLOR, COLORTERM)</li>
+    <li class="done">243 tests across 12 packages</li>
+  </ul>
+</div>
+
+<div class="phase">
   <div class="phase-dot future"></div>
-  <div class="phase-title">Phase 6: Broader Gods <span class="phase-status">FUTURE</span></div>
+  <div class="phase-title">Phase 7: Broader Gods <span class="phase-status">FUTURE</span></div>
   <ul class="phase-items">
     <li class="todo">Zeus: complete Zig build system for llama.cpp</li>
     <li class="todo">New god projects: security tools, agentic browsers</li>

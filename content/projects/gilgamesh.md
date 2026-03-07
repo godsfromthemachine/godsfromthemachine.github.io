@@ -6,7 +6,7 @@ description: "TDD-driven local AI coding agent"
 <div class="card-grid" style="margin-bottom: 2rem;">
 <div style="display: flex; gap: 0.75rem; align-items: center;">
   <span class="card-lang lang-go" style="font-size: 0.85rem; padding: 0.25rem 0.75rem;">Go</span>
-  <span class="card-status status-active" style="font-size: 0.8rem;">ACTIVE &mdash; v0.5.0</span>
+  <span class="card-status status-active" style="font-size: 0.8rem;">ACTIVE &mdash; v0.6.0</span>
   <a href="https://github.com/godsfromthemachine/gilgamesh" class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.75rem;">GitHub</a>
 </div>
 </div>
@@ -21,15 +21,21 @@ Gilgamesh is an interactive CLI agent that connects to a local llama.cpp server 
 - **Custom tool registration**: define project-specific tools in `.gilgamesh/tools.json`
 - **Streaming SSE**: tokens stream to terminal as they arrive
 - **Multi-model profiles**: switch between fast/default/heavy models mid-session
-- **Skills system**: reusable prompt templates (`.gilgamesh/skills/*.md`)
+- **Skills system**: 7 built-in skills + reusable prompt templates (`.gilgamesh/skills/*.md`)
 - **Hook system**: pre/post tool execution hooks (`.gilgamesh/hooks.json`)
 - **Session logging**: JSONL session logs with distill summaries
+- **Memory persistence**: project-scoped facts that persist across sessions
+- **Conversation history**: save and resume previous sessions (`/resume`, `/sessions`)
 - **Loop detection**: detects and breaks out of repeated tool calls
 - **Context compaction**: automatically trims old tool results to stay within context limits
-- **7 built-in skills**: commit, review, explain, fix, refactor, doc, tdd (embedded in binary)
-- **Memory persistence**: project-scoped facts that persist across sessions (`.gilgamesh/memory.json`)
-- **Conversation history**: save and resume previous sessions (`/resume`, `/sessions`)
 - **Shell completion**: bash, zsh, fish (`gilgamesh completion bash`)
+- **Graceful Ctrl+C**: cancel in-progress requests, double-Ctrl+C force quits
+- **Markdown rendering**: headers, bold/italic, lists, blockquotes, code blocks with syntax highlighting
+- **Error classification**: network, auth, timeout, LLM errors with recovery hints
+- **Context gauge**: visual progress bar showing context pressure (`/status`)
+- **Config validation**: startup warnings for invalid endpoints or missing models
+- **Environment variable overrides**: GILGAMESH_ACTIVE_MODEL, GILGAMESH_ENDPOINT, etc.
+- **Accessible NoColor**: text fallbacks for all Unicode icons when color is disabled
 - **TDD-first**: system prompt promotes writing tests before implementation
 
 ## The CLI / MCP / API Duality
@@ -90,13 +96,15 @@ gilgamesh/
 ├── agent/            # Core agent loop + event-based variant
 ├── llm/              # OpenAI-compatible streaming SSE client
 ├── tools/            # Tool registration, dispatch, 7 built-in tools
+├── ui/               # Terminal UI (color, markdown, tables, gauges, errors, commands)
 ├── mcp/              # JSON-RPC 2.0 MCP server
 ├── server/           # HTTP API server
-├── config/           # JSON config loader (model profiles)
-├── context/          # Project context + skills loader
+├── config/           # JSON config loader, validation, env var overrides
+├── context/          # Project context + skills loader (7 built-in via go:embed)
+├── memory/           # Project-scoped persistent memory
 ├── hooks/            # Pre/post tool execution hooks
-├── session/          # JSONL session logging + distill
-└── cmd/bench/        # Go model benchmark tool
+├── session/          # JSONL session logging + conversation history
+└── cmd/bench/        # Go model benchmark tool (6-stage pipeline)
 ```
 
 ## Token Budget
@@ -130,8 +138,8 @@ Measures 6 dimensions: health, raw inference (pp/tg tok/s), minimal prompt, tool
 
 | Model | PP (tok/s) | TG (tok/s) | First Response | Verdict |
 |-------|-----------|-----------|---------------|---------|
-| Qwen3.5-2B Q4_K_M | 181 | 19 | ~7s | **Sweet spot** &mdash; default |
-| Qwen3.5-4B Q8_0 | 54 | 6.3 | ~25s | Quality ceiling &mdash; heavy |
+| Qwen3.5-2B Q4_K_M | 172 | 19 | ~7s | **Sweet spot** &mdash; default |
+| Qwen3.5-4B Q4_K_M | 66 | 9.6 | ~20s | Quality ceiling &mdash; heavy |
 | Qwen3.5-0.8B | &mdash; | &mdash; | &mdash; | Rejected &mdash; too unreliable |
 
 ## Quick Start
