@@ -95,7 +95,17 @@ description: "Project milestones, phases, and future plans"
 
 <div class="phase">
   <div class="phase-dot future"></div>
-  <div class="phase-title">Phase 7: Broader Gods <span class="phase-status">FUTURE</span></div>
+  <div class="phase-title">Phase 7: Gilgamesh v1.0 &mdash; Intelligence <span class="phase-status">FUTURE</span></div>
+  <ul class="phase-items">
+    <li class="todo">Multi-model routing &mdash; automatic 2B/4B selection based on task complexity</li>
+    <li class="todo">Distill workflow &mdash; session &rarr; skill extraction</li>
+    <li class="done">Trials methodology documentation (docs/TRIAL_METHODOLOGY.md)</li>
+  </ul>
+</div>
+
+<div class="phase">
+  <div class="phase-dot future"></div>
+  <div class="phase-title">Phase 8: Broader Gods <span class="phase-status">FUTURE</span></div>
   <ul class="phase-items">
     <li class="todo">Zeus: complete Zig build system for llama.cpp</li>
     <li class="todo">New god projects: security tools, agentic browsers</li>
