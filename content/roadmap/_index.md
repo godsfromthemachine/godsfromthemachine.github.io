@@ -71,7 +71,7 @@ description: "Project milestones, phases, and future plans"
     <li class="done">Version bump to v0.5.0</li>
     <li class="done">Memory/context persistence across sessions (.gilgamesh/memory.json)</li>
     <li class="done">Project-scoped conversation history (save/resume)</li>
-    <li class="todo">Custom tool registration (user-defined)</li>
+    <li class="done">Custom tool registration (.gilgamesh/tools.json)</li>
     <li class="todo">TDD workflow automation (red-green-refactor)</li>
   </ul>
 </div>

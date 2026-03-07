@@ -18,6 +18,7 @@ Gilgamesh is an interactive CLI agent that connects to a local llama.cpp server 
 - **7 built-in tools**: read, write, edit, bash, grep, glob, test
 - **Multi-language testing**: auto-detects Go, Python, Rust, Zig, Node.js projects
 - **Configurable tool permissions**: whitelist/blacklist tools per project
+- **Custom tool registration**: define project-specific tools in `.gilgamesh/tools.json`
 - **Streaming SSE**: tokens stream to terminal as they arrive
 - **Multi-model profiles**: switch between fast/default/heavy models mid-session
 - **Skills system**: reusable prompt templates (`.gilgamesh/skills/*.md`)
