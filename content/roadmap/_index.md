@@ -70,7 +70,7 @@ description: "Project milestones, phases, and future plans"
     <li class="done">3-tier skill precedence: built-in &rarr; global &rarr; project-local</li>
     <li class="done">Version bump to v0.5.0</li>
     <li class="done">Memory/context persistence across sessions (.gilgamesh/memory.json)</li>
-    <li class="todo">Project-scoped conversation history</li>
+    <li class="done">Project-scoped conversation history (save/resume)</li>
     <li class="todo">Custom tool registration (user-defined)</li>
     <li class="todo">TDD workflow automation (red-green-refactor)</li>
   </ul>
@@ -103,6 +103,7 @@ description: "Project milestones, phases, and future plans"
     <li class="done">Context length impact &mdash; 16K ctx saves 672MB, sufficient for agent</li>
     <li class="done">Batch size tuning &mdash; b=256 optimal, b=512 regresses</li>
     <li class="done">9B Q8_0 agent benchmarks &mdash; not worth it, same efficiency as 4B but slower</li>
+    <li class="done">KV cache quantization &mdash; q4_0 saves 5-7% RAM, no quality loss</li>
     <li class="todo">Trial IQ4_XS / IQ3_M quants &mdash; smaller memory footprint</li>
     <li class="todo">New model families &mdash; Phi-4, Gemma 3, others</li>
     <li class="todo">Speculative decoding &mdash; draft model (0.8B) + verify (4B)</li>

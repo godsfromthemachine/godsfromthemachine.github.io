@@ -27,6 +27,7 @@ Gilgamesh is an interactive CLI agent that connects to a local llama.cpp server 
 - **Context compaction**: automatically trims old tool results to stay within context limits
 - **6 built-in skills**: commit, review, explain, fix, refactor, doc (embedded in binary)
 - **Memory persistence**: project-scoped facts that persist across sessions (`.gilgamesh/memory.json`)
+- **Conversation history**: save and resume previous sessions (`/resume`, `/sessions`)
 - **Shell completion**: bash, zsh, fish (`gilgamesh completion bash`)
 - **TDD-first**: system prompt promotes writing tests before implementation
 
